@@ -1,0 +1,24 @@
+{
+  "name": "sdk-microapp",
+  "private": false,
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/lib/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "deploy": "npm run build && npm publish"
+  },
+  "keywords": [],
+  "author": "Akshay Rajput",
+  "license": "MIT",
+  "dependencies": {
+    "store-microapp": "0.0.1",
+    "rxjs": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.6",
+    "rimraf": "^3.0.0"
+  }
+}
