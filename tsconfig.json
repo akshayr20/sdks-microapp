@@ -9,7 +9,7 @@
     "declaration": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": ["src/typings", "node_modules/@types"],
     "sourceMap": true,
     "strict": true /* Enable all strict type-checking options. */,
     "allowSyntheticDefaultImports": true,
