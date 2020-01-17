@@ -1,27 +1,34 @@
 import * as CartActions from "./cart.action";
 
-interface CART_STATE {
-  cart: Array<string>;
+type Cart = Array<string>;
+
+interface Action {
+  type: string;
+  payload?: any;
 }
 
-const InitialState: CART_STATE = {
-  cart: []
+/*  
+EXAMPLE IF STATE IS AN OBJECT 
+return {
+  ...state,
+  DEEP_CLONES STATES
+  // and then override the property that needs to be updated
+  todos: [...state.todos, { label: 'Build Redux,', complete: false }],
 };
+ */
 
-export const Reducer = (INITIAL_STATE = InitialState) => {
-  return (state = INITIAL_STATE, action: CartActions.CartActions) => {
+export const Reducer = (INITIAL_STATE: Cart = []) => {
+  return (state = INITIAL_STATE, action: Action) => {
+    /* IN THESE EXAMPLE CART STATE is ARRAY of STRING(id's) */
     switch (action.type) {
       case CartActions.ADD_ITEM:
-        const alreadyInTheCart = state.cart.find(
-          item => item === action.payload
-        );
+        const alreadyInTheCart = state.find(id => id === action.payload);
         if (!alreadyInTheCart) {
-          const cart = [...state.cart, action.payload];
-          return { ...state, cart };
+          return [...state, action.payload];
         }
         return state;
       case CartActions.REMOVE_ITEM:
-        const cart = state.cart.filter(item => item !== action.payload);
+        const cart = state.filter(id => id !== action.payload);
         return { ...state, cart };
       default:
         return state;

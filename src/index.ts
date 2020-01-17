@@ -1,4 +1,4 @@
-import { CartSDK, SearchSDK } from "./sdk";
+import { CartSDK, SearchSDK, StateSDK } from "./sdk";
 
 const initializeCartSDK = () => CartSDK.initializeSDK();
 
@@ -8,4 +8,15 @@ const getCartSDK = () => CartSDK.getInstance();
 
 const getSearchSDK = () => SearchSDK.getInstance();
 
-export { getCartSDK, getSearchSDK, initializeCartSDK, initializeSearchSDK };
+const initializeStateSDK = () => StateSDK.initializeSDK();
+
+const getStateSDK = () => StateSDK.getInstance();
+
+export {
+  getCartSDK,
+  getSearchSDK,
+  getStateSDK,
+  initializeCartSDK,
+  initializeSearchSDK,
+  initializeStateSDK
+};
