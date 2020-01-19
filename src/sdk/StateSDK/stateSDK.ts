@@ -21,17 +21,26 @@ class StateSDK {
   connect(prop: string) {
     const subscription: BehaviorSubject<any> = new BehaviorSubject(null);
     const oldState: any = {};
+    this.publishChange(prop, oldState, subscription);
     store.subscribe(() => {
-      const appState: any = store.getState();
-      const selectedState = { [prop]: appState[prop] };
-      Object.entries(selectedState).map(([key, value]) => {
-        if (oldState[key] !== value) {
-          subscription.next({ state: value, oldState: oldState[key], key });
-          oldState[key] = value;
-        }
-      });
+      this.publishChange(prop, oldState, subscription);
     });
     return subscription;
+  }
+
+  private publishChange(
+    prop: string,
+    oldState: any,
+    subscription: BehaviorSubject<any>
+  ) {
+    const appState: any = store.getState();
+    const selectedState = { [prop]: appState[prop] };
+    Object.entries(selectedState).map(([key, value]) => {
+      if (oldState[key] !== value) {
+        subscription.next({ state: value, oldState: oldState[key], key });
+        oldState[key] = value;
+      }
+    });
   }
 }
 

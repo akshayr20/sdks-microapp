@@ -1,7 +1,7 @@
 {
   "name": "sdk-microapp",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/types/index.d.ts",
