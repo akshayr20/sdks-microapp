@@ -4,14 +4,14 @@ export const AddItem$ = (payload: string): any => async (
   dispatch: Function
 ) => {
   const response = await exampleAPI(payload);
-  dispatch(new AddItem(response));
+  dispatch(AddItem(response));
 };
 
 export const RemoveItem$ = (payload: string): any => async (
   dispatch: Function
 ) => {
   const response = await exampleAPI(payload);
-  dispatch(new RemoveItem(response));
+  dispatch(RemoveItem(response));
 };
 
 /* FAKE API CALL */

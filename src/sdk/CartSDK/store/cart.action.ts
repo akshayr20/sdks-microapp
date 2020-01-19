@@ -1,22 +1,16 @@
-import { Action } from "redux";
-
 export const ADD_ITEM = "[CART] Add Item";
 export const REMOVE_ITEM = "[CART] Remove Item";
 
-export interface ActionWithPayload<T> extends Action {
-  payload: T;
-}
+export const AddItem = function(payload: string) {
+  return {
+    type: ADD_ITEM,
+    payload: payload
+  };
+};
 
-export class AddItem implements ActionWithPayload<string> {
-  readonly type = ADD_ITEM;
-  constructor(public readonly payload: string) {}
-}
-
-export class RemoveItem implements ActionWithPayload<string> {
-  readonly type = REMOVE_ITEM;
-  constructor(public readonly payload: string) {}
-}
-
-export type CartActions = AddItem | RemoveItem;
-
-
+export const RemoveItem = function(payload: string) {
+  return {
+    type: ADD_ITEM,
+    payload: payload
+  };
+};

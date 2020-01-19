@@ -15,16 +15,6 @@ const SearchState: Search = {
   selectedPet: ""
 };
 
-/*  
-EXAMPLE IF STATE IS AN OBJECT 
-return {
-  ...state,
-  DEEP_CLONES STATES
-  // and then override the property that needs to be updated
-  todos: [...state.todos, { label: 'Build Redux,', complete: false }],
-};
- */
-
 export const Reducer = (INITIAL_STATE = SearchState) => {
   return (state = INITIAL_STATE, action: Action) => {
     switch (action.type) {

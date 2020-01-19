@@ -4,14 +4,14 @@ export const SelectCity$ = (payload: string): any => async (
   dispatch: Function
 ) => {
   const response = await exampleAPI(payload);
-  dispatch(new SelectCity(response));
+  dispatch(SelectCity(response));
 };
 
 export const SelectPet$ = (payload: string): any => async (
   dispatch: Function
 ) => {
   const response = await exampleAPI(payload);
-  dispatch(new SelectPet(response));
+  dispatch(SelectPet(response));
 };
 
 /* FAKE API CALL */
