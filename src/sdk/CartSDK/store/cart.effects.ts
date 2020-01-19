@@ -20,6 +20,6 @@ function exampleAPI(payload: string): Promise<string> {
   return new Promise(resolve => {
     setTimeout(() => {
       return resolve(payload);
-    }, 500);
+    }, 10);
   });
 }

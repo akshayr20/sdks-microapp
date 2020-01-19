@@ -10,7 +10,7 @@ export const AddItem = function(payload: string) {
 
 export const RemoveItem = function(payload: string) {
   return {
-    type: ADD_ITEM,
+    type: REMOVE_ITEM,
     payload: payload
   };
 };
