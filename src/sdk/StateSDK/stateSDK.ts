@@ -1,4 +1,4 @@
-import { Store } from "store-microapp";
+import { store } from "store-microapp";
 import { BehaviorSubject } from "rxjs";
 
 declare global {
@@ -21,8 +21,8 @@ class StateSDK {
   connect(prop: string) {
     const subscription: BehaviorSubject<any> = new BehaviorSubject(null);
     const oldState: any = {};
-    Store.subscribe(() => {
-      const appState: any = Store.getState();
+    store.subscribe(() => {
+      const appState: any = store.getState();
       const selectedState = { [prop]: appState[prop] };
       Object.entries(selectedState).map(([key, value]) => {
         if (oldState[key] !== value) {

@@ -1,6 +1,4 @@
-// import { BehaviorSubject } from "rxjs";
-
-import { Store as store } from "store-microapp";
+import { store } from "store-microapp";
 import { Reducer } from "./store/search.reducer";
 import * as asSearchEffects from "./store/search.effects";
 

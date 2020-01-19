@@ -1,4 +1,4 @@
-import { Store as store } from "store-microapp";
+import { store } from "store-microapp";
 import { Reducer } from "./store/cart.reducer";
 import * as asCartEffects from "./store/cart.effects";
 
