@@ -1,22 +1,26 @@
-import { CartSDK, SearchSDK, StateSDK } from "./sdk";
+// import { CartSDK, SearchSDK, StateSDK } from "./sdk";
 
-const initializeCartSDK = () => CartSDK.initializeSDK();
+// const initializeCartSDK = () => CartSDK.initializeSDK();
 
-const initializeSearchSDK = () => SearchSDK.initializeSDK();
+// const initializeSearchSDK = () => SearchSDK.initializeSDK();
 
-const getCartSDK = () => CartSDK.getInstance();
+// const getCartSDK = () => CartSDK.getInstance();
 
-const getSearchSDK = () => SearchSDK.getInstance();
+// const getSearchSDK = () => SearchSDK.getInstance();
 
-const initializeStateSDK = () => StateSDK.initializeSDK();
+// const initializeStateSDK = () => StateSDK.initializeSDK();
 
-const getStateSDK = () => StateSDK.getInstance();
+// const getStateSDK = () => StateSDK.getInstance();
 
-export {
-  getCartSDK,
-  getSearchSDK,
-  getStateSDK,
-  initializeCartSDK,
-  initializeSearchSDK,
-  initializeStateSDK
-};
+// export {
+//   getCartSDK,
+//   getSearchSDK,
+//   getStateSDK,
+//   initializeCartSDK,
+//   initializeSearchSDK,
+//   initializeStateSDK
+// };
+
+import { cartSDK, searchSDK, stateSDK } from "./sdk";
+
+export { cartSDK, searchSDK, stateSDK };

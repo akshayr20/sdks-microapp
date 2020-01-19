@@ -4,7 +4,13 @@ import { Store as store } from "store-microapp";
 import { Reducer } from "./store/search.reducer";
 import * as asSearchEffects from "./store/search.effects";
 
-export class SearchSDK {
+declare global {
+  interface Window {
+    searchSDK: SearchSDK;
+  }
+}
+
+class SearchSDK {
   static initializeSDK(): void {
     if (!window.searchSDK) {
       // Initial State fetched Via API call
@@ -32,8 +38,6 @@ export class SearchSDK {
   }
 }
 
-declare global {
-  interface Window {
-    searchSDK: SearchSDK;
-  }
-}
+SearchSDK.initializeSDK();
+
+export const searchSDK = SearchSDK.getInstance();

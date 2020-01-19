@@ -2,7 +2,13 @@ import { Store as store } from "store-microapp";
 import { Reducer } from "./store/cart.reducer";
 import * as asCartEffects from "./store/cart.effects";
 
-export class CartSDK {
+declare global {
+  interface Window {
+    cartSDK: CartSDK;
+  }
+}
+
+class CartSDK {
   static initializeSDK(): void {
     if (!window.cartSDK) {
       // Initial State fetched Via API call
@@ -20,22 +26,13 @@ export class CartSDK {
 
   public addToCart(id: string) {
     store.dispatch(asCartEffects.AddItem$(id));
-    // const cart = this.$cart.value;
-    // if (!cart.includes(id)) {
-    //   this.$cart.next([...cart, id]);
-    // }
   }
 
   public removeFromCart(id: string) {
     store.dispatch(asCartEffects.RemoveItem$(id));
-    // const cart = this.$cart.value;
-    // const updatedCart = cart.filter((itemId: string) => itemId !== id);
-    // this.$cart.next(updatedCart);
   }
 }
 
-declare global {
-  interface Window {
-    cartSDK: CartSDK;
-  }
-}
+CartSDK.initializeSDK();
+
+export const cartSDK = CartSDK.getInstance();

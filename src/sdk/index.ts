@@ -1,5 +1,5 @@
-import { CartSDK } from "./CartSDK/cartSDK";
-import { SearchSDK } from "./SearchSDK/searchSDK";
-import { StateSDK } from "./StateSDK/stateSDK";
+import { cartSDK } from "./CartSDK/cartSDK";
+import { searchSDK } from "./SearchSDK/searchSDK";
+import { stateSDK } from "./StateSDK/stateSDK";
 
-export { CartSDK, SearchSDK, StateSDK };
+export { cartSDK, searchSDK, stateSDK };

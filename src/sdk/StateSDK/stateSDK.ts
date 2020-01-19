@@ -1,7 +1,13 @@
 import { Store } from "store-microapp";
 import { BehaviorSubject } from "rxjs";
 
-export class StateSDK {
+declare global {
+  interface Window {
+    stateSDK: StateSDK;
+  }
+}
+
+class StateSDK {
   static initializeSDK(): void {
     if (!window.stateSDK) {
       window.stateSDK = new StateSDK();
@@ -29,8 +35,6 @@ export class StateSDK {
   }
 }
 
-declare global {
-  interface Window {
-    stateSDK: StateSDK;
-  }
-}
+StateSDK.initializeSDK();
+
+export const stateSDK = StateSDK.getInstance();
